@@ -57,6 +57,36 @@ const arrayCard = [
 
 console.log(arrayCard);
 
+// aggiungo un oggetto all'array
+
+arrayCard.push(
+  {
+    img:"img/new-team-member-01.jpg",
+    nome: "Nuovo membro 01",
+    ruolo: "Nuovo membro 01 ruolo",
+  }
+)
+
+// aggiungo elementi all'array con form
+const nameForm = document.getElementById('name').value;
+const roleForm = document.getElementById('role').value;
+const imgForm = document.getElementById('image').value;
+
+document.getElementById('addMemberButton').addEventListener('click', aggiungoMembro);
+
+function aggiungoMembro() {
+  let newMember;
+  newMember= {
+    img: imgForm,
+    nome: nameForm,
+    ruolo: roleForm
+  },
+  
+arrayCard.push(newMember);
+console.log(arrayCard)
+
+}
+
 // stampo l'array con ciclo for in
 
 for (let i in arrayCard){
