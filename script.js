@@ -19,7 +19,7 @@
 
 
 // dove stampare l'array
-const output = document.querySelector('.team-card');
+const output = document.querySelector('.team-container');
 
 // arrayCard
 const arrayCard = [
@@ -27,7 +27,32 @@ const arrayCard = [
     img:"img/wayne-barnett-founder-ceo.jpg",
     nome: "Wayne Barnett",
     ruolo: "Founder & CEO",
-  }
+  },
+  {
+    img:"img/angela-caroll-chief-editor.jpg",
+    nome: "Angela Carroll",
+    ruolo: "Chief Editor",
+  },
+  {
+    img:"img/barbara-ramos-graphic-designer.jpg",
+    nome: "Barbara Ramos",
+    ruolo: "Graphic Designer",
+  },
+  {
+    img:"img/scott-estrada-developer.jpg",
+    nome: "Scott Estrada",
+    ruolo: "Developer",
+  },
+  {
+    img:"img/walter-gordon-office-manager.jpg",
+    nome: "Walter Gordon",
+    ruolo: "Manager",
+  },
+  {
+    img:"img/angela-lopez-social-media-manager.jpg",
+    nome: "Angela Lopez",
+    ruolo: "Social Media Manager",
+  },
 ]
 
 console.log(arrayCard);
@@ -35,19 +60,24 @@ console.log(arrayCard);
 // stampo l'array con ciclo for in
 
 for (let i in arrayCard){
+
   const card = arrayCard[i];
+
   console.log(card);
-  output.innerHTML = 
-  `<div class="card-image">
-  <img
-    src=${card.img}
-    alt=${card.nome}
-  />
-  </div>
-  <div class="card-text">
-    <h3>${card.nome}</h3>
-    <p>${card.ruolo}</p>
-  </div>
-   
+
+  output.innerHTML += 
+  `
+  <div class="team-card">
+    <div class="card-image">
+      <img
+        src=${card.img}
+        alt=${card.nome}
+      />
+    </div>
+    <div class="card-text">
+      <h3>${card.nome}</h3>
+      <p>${card.ruolo}</p>
+    </div>
+  </div> 
   `;
 }
